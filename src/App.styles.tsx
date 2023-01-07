@@ -320,12 +320,6 @@ export const Hero = {
     background: linear-gradient(45deg, ${COLOR.solid.yellow}, transparent);
     background-size: 300% 300%;
     animation: gradient 3.5s ease infinite;
-    transform: scale(1);
-    transition: transform 15ms ease-in-out;
-
-    &:hover {
-      transform: scale(1.05);
-    }
 
     @keyframes gradient {
       0% {
