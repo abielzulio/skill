@@ -5,6 +5,7 @@ import {
   GlobalStyle,
   Hero,
   Navbar,
+  Testimonial,
 } from "./App.styles"
 
 const NavigationBar = (): JSX.Element => {
@@ -37,6 +38,28 @@ const HeroSection = (): JSX.Element => {
   )
 }
 
+const TestimonialSection = (): JSX.Element => {
+  const PATH = "/assets/revamped_landing_page/company"
+  const images = [
+    PATH + "/adobe.png",
+    PATH + "/coinbase.png",
+    PATH + "/google.png",
+    PATH + "/paypal.png",
+    PATH + "/pinterest.png",
+    PATH + "/shopee.png",
+  ]
+  return (
+    <Testimonial.Wrapper>
+      <Testimonial.Title>Loved by freelancers & students at</Testimonial.Title>
+      <Testimonial.Content>
+        {images.map((img, id) => (
+          <Testimonial.Image src={img} key={id} />
+        ))}
+      </Testimonial.Content>
+    </Testimonial.Wrapper>
+  )
+}
+
 const App = () => {
   return (
     <>
@@ -45,6 +68,9 @@ const App = () => {
       <Container>
         <HeroSection />
         <Blob />
+      </Container>
+      <Container>
+        <TestimonialSection />
       </Container>
     </>
   )

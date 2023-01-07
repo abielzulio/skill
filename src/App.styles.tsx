@@ -334,3 +334,39 @@ export const Hero = {
     }
   `,
 }
+
+export const Testimonial = {
+  Wrapper: styled(Section)`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+  `,
+  Title: styled.p`
+    font-weight: 500;
+    text-align: center;
+    color: ${COLOR.solid.white};
+    opacity: 0.5;
+  `,
+  Content: styled.div`
+    width: 100%;
+    position: relative;
+    margin: 0 auto 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+  `,
+  Image: styled.img`
+    filter: grayscale(1) contrast(30%) saturate(0);
+    opacity: 0.8;
+    transition: all 0.5s;
+
+    &:hover {
+      opacity: 1;
+      filter: grayscale(0) contrast(100%) saturate(1);
+    }
+  `,
+}
