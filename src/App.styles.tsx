@@ -182,7 +182,7 @@ export const Navbar = {
       );
       transform: translate3d(0px, 20px, 0) scale(0.95);
       filter: blur(50px);
-      opacity: 0;
+      opacity: 0.3;
       transition: opacity 1s;
       border-radius: inherit;
     }
@@ -226,7 +226,7 @@ export const Container = styled.article`
 `
 
 export const Blob = styled.span`
-  bottom: 100px;
+  bottom: 5%;
   left: 25%;
   opacity: 0.8;
   z-index: 1;
@@ -264,6 +264,7 @@ const Section = styled.section`
   position: relative;
   display: flex;
   margin: 0 auto 0;
+  padding-top: 124px;
   width: 100%;
   z-index: 10;
   max-width: 1030px;
@@ -271,7 +272,7 @@ const Section = styled.section`
 
 export const Hero = {
   Wrapper: styled(Section)`
-    padding: 124px 0px;
+    padding-bottom: 62px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -319,7 +320,7 @@ export const Hero = {
     border-radius: 2px;
     background: linear-gradient(45deg, ${COLOR.solid.yellow}, transparent);
     background-size: 300% 300%;
-    animation: gradient 3.5s ease infinite;
+    animation: gradient 10s ease infinite;
 
     @keyframes gradient {
       0% {
