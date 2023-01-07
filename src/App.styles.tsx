@@ -1,4 +1,30 @@
-import styled, { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components/macro"
+
+interface ButtonProps {
+  md?: boolean
+  sm?: boolean
+}
+
+const COLOR = {
+  transparent: "transparent",
+  solid: {
+    black: "#000000",
+    white: "#ffffff",
+    yellow: "#FDB400",
+    pink: "#FD73B4",
+    purple: "#e681ff",
+    violet: "#6a67ff ",
+  },
+  gradient: {
+    primary: "linear-gradient(45deg, #FDB400 15.42%, #FD73B4 84.04%)",
+  },
+}
+
+const FONT_SIZE = {
+  md: "1em",
+  sm: "0.8em",
+}
+
 export const GlobalStyle = createGlobalStyle`
     @font-face {
     font-family: "Test Geograph";
@@ -84,3 +110,233 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 100;
     font-display: swap;
   }
+  
+
+`
+
+export const Button = styled("button")<ButtonProps>`
+  display: inline-block;
+  position: relative;
+  background: ${COLOR.gradient.primary};
+  border-color: ${COLOR.transparent};
+  border-radius: 2em;
+  color: ${COLOR.solid.black};
+  font-size: ${(props) => {
+    if (props.sm) return FONT_SIZE.sm
+    if (props.md) return FONT_SIZE.md
+  }};
+  font-weight: 600;
+  padding: 0.5em 2em;
+  background-size: 200% 200%;
+  background-origin: border-box;
+  background-position: 100% 100%;
+  transition: all 0.5s;
+  text-align: center;
+  cursor: pointer;
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+  &::after {
+    content: "→";
+    position: absolute;
+    opacity: 0;
+    right: -0.6em;
+    transition: 0.5s;
+  }
+
+  &:hover {
+    background-position: 0% 0%;
+    padding-right: 2.6em;
+    padding-left: 1.4em;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    right: 1em;
+  }
+`
+
+export const Navbar = {
+  Wrapper: styled.nav`
+    background-color: ${COLOR.solid.black};
+    display: flex;
+    height: 72px;
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+
+    &::before {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(
+        -45deg,
+        ${COLOR.solid.yellow} 0%,
+        ${COLOR.solid.pink} 100%
+      );
+      transform: translate3d(0px, 20px, 0) scale(0.95);
+      filter: blur(50px);
+      opacity: 0;
+      transition: opacity 1s;
+      border-radius: inherit;
+    }
+
+    &:hover::before {
+      opacity: 0.8;
+    }
+
+    &::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: inherit;
+      border-radius: inherit;
+    }
+  `,
+  Content: styled.div`
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 0;
+    max-width: 1030px;
+    padding: 1em 2em 1em;
+    width: 100%;
+  `,
+  Logo: styled.img`
+    height: 24px;
+    object-fit: contain;
+  `,
+}
+
+export const Container = styled.article`
+  background-color: ${COLOR.solid.black};
+  position: relative;
+  width: 100%;
+  height: 100%;
+`
+
+export const Blob = styled.span`
+  bottom: 100px;
+  left: 25%;
+  opacity: 0.8;
+  z-index: 1;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: linear-gradient(
+      97.31deg,
+      ${COLOR.solid.yellow} 1.09%,
+      ${COLOR.solid.pink} 102.56%
+    ),
+    linear-gradient(
+      97.31deg,
+      ${COLOR.solid.purple} 1.09%,
+      ${COLOR.solid.violet} 102.56%
+    );
+  filter: blur(300px);
+  animation: bop 20s ease infinite;
+
+  @keyframes bop {
+    0% {
+      transform: scale(0.8);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(0.8);
+    }
+  }
+`
+
+const Section = styled.section`
+  height: 100%;
+  position: relative;
+  display: flex;
+  margin: 0 auto 0;
+  width: 100%;
+  z-index: 10;
+  max-width: 1030px;
+`
+
+export const Hero = {
+  Wrapper: styled(Section)`
+    padding: 124px 0px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+  `,
+  Headline: styled.h1`
+    letter-spacing: -1px;
+    font-weight: 600;
+    font-size: 4em;
+    text-align: center;
+    margin: 0 auto 0;
+    text-fill-color: ${COLOR.solid.white};
+    -webkit-text-fill-color: ${COLOR.solid.white};
+  `,
+  Highlight: styled.span`
+    background: ${COLOR.gradient.primary};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 15s ease infinite;
+    background-size: 200% 200%;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 0%;
+      }
+      100% {
+        background-position: 0% 100%;
+      }
+    }
+  `,
+  Description: styled.p`
+    font-size: 1.2em;
+    color: ${COLOR.solid.white};
+  `,
+
+  Video: styled.video`
+    width: 100%;
+    padding: 2px;
+    margin-top: 2em;
+    border-radius: 2px;
+    background: linear-gradient(45deg, ${COLOR.solid.yellow}, transparent);
+    background-size: 300% 300%;
+    animation: gradient 3.5s ease infinite;
+    transform: scale(1);
+    transition: transform 15ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 100%;
+      }
+      50% {
+        background-position: 100% 0%;
+      }
+      100% {
+        background-position: 0% 100%;
+      }
+    }
+  `,
+}
