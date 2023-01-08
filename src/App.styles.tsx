@@ -566,7 +566,7 @@ export const Feature = {
         justify-content: center;
         align-items: center;
         height: 88px;
-        border-radius: 16px;
+        border-radius: 12px;
         background: ${(props) => props.background ?? "transparent"};
 
         // background scale

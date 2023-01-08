@@ -218,7 +218,9 @@ const FeaturesTwoSection = (): JSX.Element => {
 const CTASection = (): JSX.Element => {
   return (
     <Section.Homepage>
-      <Heading.One>You're two clicks away from glory.</Heading.One>
+      <Heading.One style={{ textAlign: "center" }}>
+        You're two clicks away from glory.
+      </Heading.One>
       <Button md style={{ marginTop: "32px" }}>
         Join Waitlist
       </Button>
@@ -241,7 +243,10 @@ const FooterSection = (): JSX.Element => {
 
 const JoinPoolSection = (): JSX.Element => {
   return (
-    <Section.Homepage backgroundImg={ASSET_PATH + "/bg-join-pool.png"}>
+    <Section.Homepage
+      backgroundImg={ASSET_PATH + "/bg-join-pool.png"}
+      style={{ marginTop: "62px", marginBottom: "62px" }}
+    >
       <Heading.Two>Join Our Talent Pool</Heading.Two>
       <Heading.Three style={{ fontWeight: 400 }}>
         SkillDeck portfolios get up to 5x higher traffic.
@@ -338,20 +343,20 @@ const App = () => {
         <CompanySection />
       </Container>
       <Container>
+        <Blob
+          width="60%"
+          height="80%"
+          opacity={0.2}
+          borderRadius="80%"
+          left="0%"
+          bottom="0"
+        />
         <FeatureOneSection />
       </Container>
       <Container>
         <FeaturesTwoSection />
       </Container>
       <Container>
-        <Blob
-          width="40%"
-          height="100%"
-          opacity={0.2}
-          borderRadius="100%"
-          left="0%"
-          bottom="100%"
-        />
         <JoinPoolSection />
       </Container>
       <Container>
