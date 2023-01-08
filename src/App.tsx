@@ -52,7 +52,7 @@ const HeroSection = (): JSX.Element => {
   )
 }
 
-const TestimonialSection = (): JSX.Element => {
+const CompanySection = (): JSX.Element => {
   const PATH = ASSET_PATH + "/company"
   const images = [
     PATH + "/adobe.png",
@@ -259,7 +259,7 @@ const App = () => {
         <Blob borderRadius="30%" animate />
       </Container>
       <Container>
-        <TestimonialSection />
+        <CompanySection />
       </Container>
       <Container>
         <FeatureOneSection />
