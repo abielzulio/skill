@@ -179,6 +179,7 @@ export const Text = {
     }
   `,
 }
+
 export const Button = styled("button")<ButtonProps>`
   display: inline-block;
   position: relative;
@@ -225,12 +226,15 @@ export const Button = styled("button")<ButtonProps>`
 
 export const Navbar = {
   Wrapper: styled.nav`
-    background-color: ${COLOR.solid.black};
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     height: 72px;
     position: fixed;
     width: 100%;
     z-index: 50;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 3px 0 rgba(225, 225, 225, 0.08);
 
     &::before {
       content: "";
@@ -309,14 +313,14 @@ export const Blob = styled("span")<BlobProps>`
       ${COLOR.solid.violet} 102.56%
     );
   filter: blur(300px);
-  animation: bop 20s ease infinite;
+  animation: bop 5s ease infinite;
 
   @keyframes bop {
     0% {
       transform: scale(0.8);
     }
     50% {
-      transform: scale(1.2);
+      transform: scale(1.3);
     }
     100% {
       transform: scale(0.8);
