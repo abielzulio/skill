@@ -138,6 +138,24 @@ export const Heading = {
     font-size: 1.5em;
   `,
 }
+
+export const Section = {
+  Homepage: styled.section`
+    height: 100%;
+    position: relative;
+    display: flex;
+    margin: 0 auto 0;
+    padding: 124px 0px;
+    width: 100%;
+    z-index: 10;
+    max-width: 1030px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+  `,
+}
+
 export const Text = {
   Gradient: styled.span`
     background: ${COLOR.gradient.primary};
@@ -306,24 +324,9 @@ export const Blob = styled("span")<BlobProps>`
   }
 `
 
-const Section = styled.section`
-  height: 100%;
-  position: relative;
-  display: flex;
-  margin: 0 auto 0;
-  padding-top: 124px;
-  width: 100%;
-  z-index: 10;
-  max-width: 1030px;
-`
-
 export const Hero = {
-  Wrapper: styled(Section)`
+  Wrapper: styled(Section.Homepage)`
     padding-bottom: 62px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2em;
   `,
   Headline: styled(Heading.One)`
     text-align: center;
@@ -360,13 +363,9 @@ export const Hero = {
 }
 
 export const Testimonial = {
-  Wrapper: styled(Section)`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  Wrapper: styled(Section.Homepage)`
     flex-wrap: wrap;
-    gap: 2em;
+    padding-bottom: 124px;
   `,
   Title: styled.p`
     font-weight: 500;
