@@ -6,6 +6,7 @@ import {
   Hero,
   Navbar,
   Testimonial,
+  Text,
 } from "./App.styles"
 
 const NavigationBar = (): JSX.Element => {
@@ -27,7 +28,7 @@ const HeroSection = (): JSX.Element => {
     <Hero.Wrapper>
       <Hero.Headline>
         Resumes are Dead. <br />
-        <Hero.Highlight>This is the future.</Hero.Highlight>
+        <Text.Gradient>This is the future.</Text.Gradient>
       </Hero.Headline>
       <Hero.Description>
         Build a portfolio in minutes. Land jobs and clients.
