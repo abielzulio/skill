@@ -182,6 +182,16 @@ const FeaturesTwoSection = (): JSX.Element => {
         </Features.Heading.Title>
       </Features.Content>
       <Features.Content>
+        <Feature.Two.Item
+          background={{
+            color: COLOR.gradient.tertiary,
+          }}
+        >
+          <Heading.Three>Templates to Get Started</Heading.Three>
+          <p style={{ color: "white" }}>
+            Use our library of 20+ templates to help you story-tell better.
+          </p>
+        </Feature.Two.Item>
         <Features.Grid.Wrapper>
           {FEATURES.map((item, id) => (
             <Feature.Two.Item
