@@ -301,7 +301,7 @@ const TestimonialSection = (): JSX.Element => {
   ]
   return (
     <Section.Homepage style={{ marginTop: "62px", marginBottom: "62px" }}>
-      <Features.Heading.Subtitle>EASY-TO-USE</Features.Heading.Subtitle>
+      <Features.Heading.Subtitle>MADE FOR ALL</Features.Heading.Subtitle>
       <Heading.Two>For Devs, Designers, and more.</Heading.Two>
       <Heading.Three style={{ fontWeight: 400 }}>
         They love us. You will too.
