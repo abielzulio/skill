@@ -5,7 +5,15 @@ interface ButtonProps {
   sm?: boolean
 }
 
-const COLOR = {
+interface BlobProps {
+  bottom?: string
+  left?: string
+  opacity?: number
+  width?: string
+  height?: string
+}
+
+export const COLOR = {
   transparent: "transparent",
   solid: {
     black: "#000000",
@@ -225,14 +233,14 @@ export const Container = styled.article`
   height: 100%;
 `
 
-export const Blob = styled.span`
-  bottom: 5%;
-  left: 25%;
-  opacity: 0.8;
+export const Blob = styled("span")<BlobProps>`
+  bottom: ${(props) => props.bottom ?? "5%"};
+  left: ${(props) => props.left ?? "25%"};
+  opacity: ${(props) => props.opacity ?? 0.8};
   z-index: 1;
   position: absolute;
-  width: 50%;
-  height: 50%;
+  width: ${(props) => props.width ?? "50%"};
+  height: ${(props) => props.height ?? "50%"};
   background: linear-gradient(
       97.31deg,
       ${COLOR.solid.yellow} 1.09%,
