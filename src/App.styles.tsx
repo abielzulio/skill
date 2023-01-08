@@ -25,6 +25,10 @@ export const COLOR = {
   },
   gradient: {
     primary: "linear-gradient(45deg, #FDB400 15.42%, #FD73B4 84.04%)",
+    secondary:
+      "linear-gradient(140.28deg, #81F0FF 16.13%, #676DFF 83.35%), #4A6ADC",
+    tertiary:
+      "linear-gradient(140.28deg, #E681FF 16.13%, #6A67FF 83.35%), #D04ADC",
   },
 }
 
@@ -397,6 +401,146 @@ export const Testimonial = {
     }
   `,
 }
+
+export const Features = {
+  Wrapper: styled(Section.Homepage)`
+    gap: 5em;
+    padding-bottom: 124px;
+  `,
+  Content: styled.div`
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+    justify-content: center;
+  `,
+  Heading: {
+    Subtitle: styled(Text.Gradient)`
+      text-transform: uppercase;
+      text-align: center;
+    `,
+    Title: styled(Heading.Two)`
+      text-align: center;
+    `,
+  },
+  Flex: {
+    Wrapper: styled("div")<{ isReverse?: boolean }>`
+      width: 100%;
+      display: flex;
+      flex-direction: ${(props) => (props.isReverse ? "row-reverse" : "row")};
+      gap: 2em;
+    `,
+    Item: styled.div`
+      display: flex;
+      width: 50%;
+      height: 100%;
+      flex-direction: column;
+      justify-content: left;
+      align-items: flex-start;
+      gap: 1em;
+    `,
+  },
+  Grid: {
+    Wrapper: styled.div`
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2em;
+    `,
+    Item: styled.div`
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      justify-content: left;
+      align-items: flex-start;
+      gap: 1em;
+    `,
+  },
+}
+
+export const Feature = {
+  Two: {
+    Item: styled(Features.Grid.Item)<{
+      background?: { color: string | undefined; icon: string }
+    }>`
+      background: transparent;
+      position: relative;
+      padding: 32px;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 2px solid rgba(225, 225, 225, 0.08);
+
+      &::after {
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        z-index: -1;
+        position: absolute;
+        opacity: 0.3;
+        filter: blur(100px);
+        backdrop-filter: blur(8px);
+        transition: all 0.5s ease;
+        -webkit-backdrop-filter: blur(8px);
+        background: ${(props) => props.background?.color ?? "transparent"};
+      }
+
+      &::before {
+        content: url(${(props) => props.background?.icon ?? ""});
+        top: 12px;
+        right: 36px;
+        bottom: 0;
+        width: 50px;
+        height: 50px;
+        transform: scale(3);
+        z-index: -1;
+        position: absolute;
+        opacity: 0.5;
+        mix-blend-mode: overlay;
+        transition: all 0.5s ease;
+        background: transparent;
+      }
+
+      &:hover::before {
+        opacity: 1;
+        right: 54px;
+        transform: scale(4);
+      }
+
+      &:hover::after {
+        opacity: 0.6;
+        filter: blur(50px);
+      }
+    `,
+    Icon: {
+      Wrapper: styled("div")<{ background?: string }>`
+        width: 88px;
+        height: 88px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 88px;
+        border-radius: 16px;
+        background: ${(props) => props.background ?? "transparent"};
+
+        // background scale
+      `,
+      Content: styled.embed`
+        transition: transform 0.5s ease;
+        transform: scale(1);
+
+        /*         ${Features.Grid.Item}:hover & {
+          transform: scale(1.1);
+        } */
+      `,
+    },
+  },
+}
+
 export const Footer = {
   Wrapper: styled.footer`
     width: 100%;
