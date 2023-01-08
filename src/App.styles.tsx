@@ -11,6 +11,10 @@ interface BlobProps {
   opacity?: number
   width?: string
   height?: string
+  borderRadius?: string
+  animationDuration?: number
+  variant?: "primary" | "secondary"
+  animate?: boolean
 }
 
 export const COLOR = {
@@ -304,9 +308,13 @@ export const Blob = styled("span")<BlobProps>`
   opacity: ${(props) => props.opacity ?? 0.8};
   z-index: 1;
   position: absolute;
+  overflow: hidden;
+  border-radius: ${(props) => props.borderRadius ?? "100%"};
   width: ${(props) => props.width ?? "50%"};
   height: ${(props) => props.height ?? "50%"};
-  background: linear-gradient(
+  background: ${(props) => {
+    if (!props.variant)
+      return `linear-gradient(
       97.31deg,
       ${COLOR.solid.yellow} 1.09%,
       ${COLOR.solid.pink} 102.56%
@@ -315,9 +323,15 @@ export const Blob = styled("span")<BlobProps>`
       97.31deg,
       ${COLOR.solid.purple} 1.09%,
       ${COLOR.solid.violet} 102.56%
-    );
+    )`
+    if (props.variant === "primary") return COLOR.gradient.primary
+    if (props.variant === "secondary") return COLOR.gradient.secondary
+  }};
   filter: blur(300px);
-  animation: bop 5s ease infinite;
+  animation: ${(props) =>
+    props.animate
+      ? `bop ${props.animationDuration ?? "10"}s ease infinite`
+      : "none"};
 
   @keyframes bop {
     0% {

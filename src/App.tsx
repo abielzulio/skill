@@ -243,7 +243,7 @@ const App = () => {
       <NavigationBar />
       <Container>
         <HeroSection />
-        <Blob />
+        <Blob borderRadius="30%" animate />
       </Container>
       <Container>
         <TestimonialSection />
@@ -256,7 +256,14 @@ const App = () => {
       </Container>
       <Container>
         <CTASection />
-        <Blob width="30%" height="100%" opacity={0.5} left="35%" />
+        <Blob
+          width="40%"
+          height="100%"
+          opacity={0.5}
+          borderRadius="100%"
+          left="40%"
+          bottom="-100px"
+        />
       </Container>
       <Container>
         <FooterSection />
