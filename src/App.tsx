@@ -60,6 +60,14 @@ const TestimonialSection = (): JSX.Element => {
   )
 }
 
+const CTASection = (): JSX.Element => {
+  return (
+    <Section.Homepage>
+      <Heading.One>You're two clicks away from glory.</Heading.One>
+      <Button md>Join Waitlist</Button>
+    </Section.Homepage>
+  )
+}
 const FooterSection = (): JSX.Element => {
   return (
     <Footer.Wrapper>
@@ -87,6 +95,10 @@ const App = () => {
       </Container>
       <Container>
         <TestimonialSection />
+      </Container>
+      <Container>
+        <CTASection />
+        <Blob width="30%" height="100%" opacity={0.5} left="35%" />
       </Container>
       <Container>
         <FooterSection />
