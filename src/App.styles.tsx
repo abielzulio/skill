@@ -148,7 +148,7 @@ export const Heading = {
 }
 
 export const Section = {
-  Homepage: styled.section`
+  Homepage: styled("section")<{ backgroundImg?: string }>`
     height: 100%;
     position: relative;
     display: flex;
@@ -161,6 +161,30 @@ export const Section = {
     justify-content: center;
     align-items: center;
     gap: 2em;
+
+    &::before {
+      content: " ";
+      display: block;
+      z-index: -1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      border-radius: 20px;
+      height: 100%;
+      opacity: 0.5;
+      background-image: ${(props) =>
+        props.backgroundImg ? `url(${props.backgroundImg})` : "unset"};
+      background-size: ${(props) => (props.backgroundImg ? `cover` : "unset")};
+      background-repeat: no-repeat;
+      background-position: 0% 0%;
+      transition: all 0.5s ease;
+    }
+
+    &:hover::before {
+      opacity: 0.8;
+      background-position: 0% 50%;
+    }
   `,
 }
 

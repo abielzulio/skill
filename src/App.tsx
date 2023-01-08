@@ -238,6 +238,17 @@ const FooterSection = (): JSX.Element => {
   )
 }
 
+const JoinPoolSection = (): JSX.Element => {
+  return (
+    <Section.Homepage backgroundImg={ASSET_PATH + "/bg-join-pool.png"}>
+      <Heading.Two>Join Our Talent Pool</Heading.Two>
+      <Heading.Three style={{ fontWeight: 400 }}>
+        SkillDeck portfolios get up to 5x higher traffic.
+      </Heading.Three>
+    </Section.Homepage>
+  )
+}
+
 const App = () => {
   return (
     <>
@@ -255,6 +266,17 @@ const App = () => {
       </Container>
       <Container>
         <FeaturesTwoSection />
+      </Container>
+      <Container>
+        <Blob
+          width="40%"
+          height="100%"
+          opacity={0.2}
+          borderRadius="100%"
+          left="0%"
+          bottom="100%"
+        />
+        <JoinPoolSection />
       </Container>
       <Container>
         <CTASection />
