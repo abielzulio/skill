@@ -277,7 +277,7 @@ export const Navbar = {
     display: flex;
     justify-content: space-between;
     margin: 0 auto 0;
-    max-width: 1030px;
+    max-width: 1110px;
     padding: 1em 2em 1em;
     width: 100%;
   `,
