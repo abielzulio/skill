@@ -21,14 +21,15 @@ interface Feature {
   description: string
 }
 
+const ASSET_PATH = "/assets/revamped_landing_page"
+
+const LOGO_PATH = ASSET_PATH + "/logo.png"
+
 const NavigationBar = (): JSX.Element => {
   return (
     <Navbar.Wrapper>
       <Navbar.Content>
-        <Navbar.Logo
-          src="/assets/revamped_landing_page/logo.png"
-          alt="SkillDeck"
-        />
+        <Navbar.Logo src={LOGO_PATH} alt="SkillDeck" />
         <Button sm>Join Waitlist</Button>
       </Navbar.Content>
     </Navbar.Wrapper>
@@ -52,7 +53,7 @@ const HeroSection = (): JSX.Element => {
 }
 
 const TestimonialSection = (): JSX.Element => {
-  const PATH = "/assets/revamped_landing_page/company"
+  const PATH = ASSET_PATH + "/company"
   const images = [
     PATH + "/adobe.png",
     PATH + "/coinbase.png",
@@ -74,7 +75,7 @@ const TestimonialSection = (): JSX.Element => {
 }
 
 const FeatureOneSection = (): JSX.Element => {
-  const PATH = "/assets/revamped_landing_page/features/one"
+  const PATH = ASSET_PATH + "/features/one"
   const FEATURES: Feature[] = [
     {
       icon: { src: PATH + "/build.svg" },
@@ -134,7 +135,7 @@ const FeatureOneSection = (): JSX.Element => {
 }
 
 const FeaturesTwoSection = (): JSX.Element => {
-  const PATH = "/assets/revamped_landing_page/features/two"
+  const PATH = ASSET_PATH + "/features/two"
   const FEATURES: Feature[] = [
     {
       icon: {
@@ -216,11 +217,7 @@ const FooterSection = (): JSX.Element => {
   return (
     <Footer.Wrapper>
       <Footer.Content>
-        <Footer.Logo
-          src="/assets/revamped_landing_page/logo.png"
-          alt="SkillDeck"
-          height="18px"
-        />
+        <Footer.Logo src={LOGO_PATH} alt="SkillDeck" height="18px" />
         <p style={{ color: `${COLOR.solid.white}` }}>
           © {new Date(Date.now()).getFullYear()} SkillDeck. All rights reserved.
         </p>
