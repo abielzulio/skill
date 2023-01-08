@@ -138,6 +138,29 @@ export const Heading = {
     font-size: 1.5em;
   `,
 }
+export const Text = {
+  Gradient: styled.span`
+    background: ${COLOR.gradient.primary};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 5s ease infinite;
+    background-size: 200% 200%;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 0%;
+      }
+      50% {
+        background-position: 100% 0%;
+      }
+      100% {
+        background-position: 0% 100%;
+      }
+    }
+  `,
+}
 export const Button = styled("button")<ButtonProps>`
   display: inline-block;
   position: relative;
@@ -307,27 +330,6 @@ export const Hero = {
     margin: 0 auto 0;
     text-fill-color: ${COLOR.solid.white};
     -webkit-text-fill-color: ${COLOR.solid.white};
-  `,
-  Highlight: styled.span`
-    background: ${COLOR.gradient.primary};
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient 15s ease infinite;
-    background-size: 200% 200%;
-    background-clip: text;
-    text-fill-color: transparent;
-
-    @keyframes gradient {
-      0% {
-        background-position: 0% 0%;
-      }
-      50% {
-        background-position: 100% 0%;
-      }
-      100% {
-        background-position: 0% 100%;
-      }
-    }
   `,
   Description: styled.p`
     font-size: 1.2em;
