@@ -11,6 +11,9 @@ body {
 *,
 *::before,
 *::after {
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  -moz-text-size-adjust: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
