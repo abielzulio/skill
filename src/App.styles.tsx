@@ -212,8 +212,8 @@ export const Navbar = {
     padding: 1em 2em 1em;
     width: 100%;
   `,
-  Logo: styled.img`
-    height: 24px;
+  Logo: styled("img")<{ height?: string }>`
+    height: ${(props) => props.height ?? "24px"};
     object-fit: contain;
   `,
 }
@@ -370,4 +370,20 @@ export const Testimonial = {
       filter: grayscale(0) contrast(100%) saturate(1);
     }
   `,
+}
+export const Footer = {
+  Wrapper: styled.footer`
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 -3px 0 rgba(225, 225, 225, 0.08);
+    height: 120px;
+    z-index: 50;
+  `,
+  Content: styled(Navbar.Content)`
+    height: 100%;
+  `,
+  Logo: styled(Navbar.Logo)``,
 }

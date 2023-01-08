@@ -60,6 +60,22 @@ const TestimonialSection = (): JSX.Element => {
   )
 }
 
+const FooterSection = (): JSX.Element => {
+  return (
+    <Footer.Wrapper>
+      <Footer.Content>
+        <Footer.Logo
+          src="/assets/revamped_landing_page/logo.png"
+          alt="SkillDeck"
+          height="18px"
+        />
+        <p style={{ color: `${COLOR.solid.white}` }}>
+          © {new Date(Date.now()).getFullYear()} SkillDeck. All rights reserved.
+        </p>
+      </Footer.Content>
+    </Footer.Wrapper>
+  )
+}
 const App = () => {
   return (
     <>
@@ -71,6 +87,9 @@ const App = () => {
       </Container>
       <Container>
         <TestimonialSection />
+      </Container>
+      <Container>
+        <FooterSection />
       </Container>
     </>
   )
