@@ -2,6 +2,7 @@ import {
   Blob,
   Button,
   COLOR,
+  Company,
   Container,
   Feature,
   Features,
@@ -63,14 +64,14 @@ const CompanySection = (): JSX.Element => {
     PATH + "/shopee.png",
   ]
   return (
-    <Testimonial.Wrapper>
-      <Testimonial.Title>Loved by freelancers & students at</Testimonial.Title>
-      <Testimonial.Content>
+    <Company.Wrapper>
+      <Company.Title>Loved by freelancers & students at</Company.Title>
+      <Company.Content>
         {images.map((img, id) => (
-          <Testimonial.Image src={img} key={id} />
+          <Company.Image src={img} key={id} />
         ))}
-      </Testimonial.Content>
-    </Testimonial.Wrapper>
+      </Company.Content>
+    </Company.Wrapper>
   )
 }
 

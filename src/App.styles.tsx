@@ -410,7 +410,7 @@ export const Hero = {
   `,
 }
 
-export const Testimonial = {
+export const Company = {
   Wrapper: styled(Section.Homepage)`
     flex-wrap: wrap;
     padding-bottom: 124px;
