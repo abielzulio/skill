@@ -122,6 +122,22 @@ export const GlobalStyle = createGlobalStyle`
 
 `
 
+export const Heading = {
+  One: styled.h1`
+    letter-spacing: -1px;
+    font-weight: 600;
+    font-size: 4em;
+    color: ${COLOR.solid.white};
+  `,
+  Two: styled.h2`
+    color: ${COLOR.solid.white};
+    font-size: 2.8em;
+  `,
+  Three: styled.h3`
+    color: ${COLOR.solid.white};
+    font-size: 1.5em;
+  `,
+}
 export const Button = styled("button")<ButtonProps>`
   display: inline-block;
   position: relative;
@@ -286,10 +302,7 @@ export const Hero = {
     align-items: center;
     gap: 2em;
   `,
-  Headline: styled.h1`
-    letter-spacing: -1px;
-    font-weight: 600;
-    font-size: 4em;
+  Headline: styled(Heading.One)`
     text-align: center;
     margin: 0 auto 0;
     text-fill-color: ${COLOR.solid.white};
