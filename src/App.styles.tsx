@@ -237,12 +237,14 @@ export const Navbar = {
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     height: 72px;
+    backface-visibility: hidden;
+    will-change: backdrop-filter;
     position: fixed;
     width: 100%;
     z-index: 50;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 3px 0 rgba(225, 225, 225, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 0 rgba(225, 225, 225, 0.08);
 
     &::before {
       content: "";
@@ -477,14 +479,16 @@ export const Features = {
 export const Feature = {
   Two: {
     Item: styled(Features.Grid.Item)<{
-      background?: { color: string | undefined; icon: string }
+      background?: { color: string | undefined; icon?: string | undefined }
     }>`
       background: transparent;
       position: relative;
       padding: 32px;
       overflow: hidden;
       border-radius: 20px;
-      border: 2px solid rgba(225, 225, 225, 0.08);
+      -webkit-box-shadow: inset 0px 0px 0px 2px rgba(225, 225, 225, 0.08);
+      -moz-box-shadow: inset 0px 0px 0px 2px rgba(225, 225, 225, 0.08);
+      box-shadow: inset 0px 0px 0px 2px rgba(225, 225, 225, 0.08);
 
       &::after {
         content: "";

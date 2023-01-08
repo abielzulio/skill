@@ -218,7 +218,9 @@ const CTASection = (): JSX.Element => {
   return (
     <Section.Homepage>
       <Heading.One>You're two clicks away from glory.</Heading.One>
-      <Button md>Join Waitlist</Button>
+      <Button md style={{ marginTop: "32px" }}>
+        Join Waitlist
+      </Button>
     </Section.Homepage>
   )
 }
