@@ -250,6 +250,81 @@ const JoinPoolSection = (): JSX.Element => {
   )
 }
 
+const TestimonialSection = (): JSX.Element => {
+  const PATH = ASSET_PATH + "/fake-users"
+  const TESTIMONIALS = [
+    {
+      img: PATH + "/1.png",
+      name: "Darlene Robertson",
+      handle: "@darlens",
+      message:
+        "This app has made it so easy for me to find and manage freelance work, and I've been able to grow my business thanks to it",
+    },
+    {
+      img: PATH + "/2.png",
+      name: "Devon Lane",
+      handle: "@devon",
+      message: "This app has helped me find high-quality clients and projects.",
+    },
+    {
+      img: PATH + "/3.png",
+      name: "Devon Lane",
+      handle: "@lane",
+      message:
+        "This app has made it so much easier for me to find and manage freelance work, and the payment system is secure and convenient.",
+    },
+    {
+      img: PATH + "/2.png",
+      name: "Darlene Robertson",
+      handle: "@darlens",
+      message:
+        "This app has made it so easy for me to find and manage freelance work, and I've been able to grow my business thanks to it",
+    },
+    {
+      img: PATH + "/3.png",
+      name: "Devon Lane",
+      handle: "@lane",
+      message:
+        "This app has made it so much easier for me to find and manage freelance work, and the payment system is secure and convenient.",
+    },
+    {
+      img: PATH + "/1.png",
+      name: "Devon Lane",
+      handle: "@devon",
+      message: "This app has helped me find high-quality clients and projects.",
+    },
+  ]
+  return (
+    <Section.Homepage style={{ marginTop: "62px", marginBottom: "62px" }}>
+      <Features.Heading.Subtitle>EASY-TO-USE</Features.Heading.Subtitle>
+      <Heading.Two>For Devs, Designers, and more.</Heading.Two>
+      <Heading.Three style={{ fontWeight: 400 }}>
+        They love us. You will too.
+      </Heading.Three>
+      <Testimonial.Wrapper>
+        {TESTIMONIALS.map((item, id) => (
+          <Testimonial.Item key={id}>
+            <div style={{ display: "flex", gap: "1em" }}>
+              <img src={item.img} alt={item.name} />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.3em",
+                }}
+              >
+                <p style={{ fontWeight: 500 }}>{item.name}</p>
+                <p style={{ opacity: 0.5 }}>{item.handle}</p>
+              </div>
+            </div>
+            <p>{item.message}</p>
+          </Testimonial.Item>
+        ))}
+      </Testimonial.Wrapper>
+    </Section.Homepage>
+  )
+}
+
 const App = () => {
   return (
     <>
@@ -278,6 +353,9 @@ const App = () => {
           bottom="100%"
         />
         <JoinPoolSection />
+      </Container>
+      <Container>
+        <TestimonialSection />
       </Container>
       <Container>
         <CTASection />

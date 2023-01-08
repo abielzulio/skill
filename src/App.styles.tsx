@@ -583,6 +583,32 @@ export const Feature = {
   },
 }
 
+export const Testimonial = {
+  Wrapper: styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    width: 100%;
+    margin-top: 5em;
+  `,
+  Item: styled.div`
+    -webkit-box-shadow: inset 0px 0px 0px 2px rgba(225, 225, 225, 0.08);
+    -moz-box-shadow: inset 0px 0px 0px 2px rgba(225, 225, 225, 0.08);
+    box-shadow: inset 0px 0px 0px 2px rgba(225, 225, 225, 0.08);
+    padding: 24px;
+    border-radius: 20px;
+    background: linear-gradient(
+      154.49deg,
+      rgba(121, 117, 131, 0.2) 5.35%,
+      rgba(54, 53, 103, 0.2) 83.85%
+    );
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    color: ${COLOR.solid.white};
+  `,
+}
+
 export const Footer = {
   Wrapper: styled.footer`
     width: 100%;
